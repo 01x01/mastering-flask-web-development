@@ -1,3 +1,6 @@
+import os 
+
+
 class Config(object):
     pass
 
@@ -8,5 +11,6 @@ class ProdConfig(Config):
 
 class DevConfig(Config):
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.getenv('DEV_SQLALCHEMY_DATABASE_URI')
 
 
